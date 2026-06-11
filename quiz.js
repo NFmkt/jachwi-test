@@ -215,9 +215,13 @@ const userId = (() => {
   return id;
 })();
 
+const _utmParams = new URLSearchParams(window.location.search);
+const utmSource = _utmParams.get('utm_source') || 'direct';
+const utmMedium = _utmParams.get('utm_medium') || '-';
+
 function logCTA(button) {
   const type = currentResult ? currentResult.name : '-';
-  new Image().src = SHEET_URL + '?' + new URLSearchParams({ button, type, userId });
+  new Image().src = SHEET_URL + '?' + new URLSearchParams({ button, type, userId, channel: utmSource, medium: utmMedium });
 }
 
 function render(html) {
