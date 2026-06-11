@@ -101,56 +101,64 @@ const RESULT_KEY_REVERSE = Object.fromEntries(
 
 const results = {
   "집콕 마스터": {
-    img: BASE + '1_bangguseok.png',
+    img: BASE + '01_bangguseok.png',
+    thumb: BASE + '1_bangguseok.png',
     name: "집콕 마스터",
     sub: '"이불 밖은 위험해!"',
     desc: "주말에 약속 없으면 오히려 에너지가 풀충전되는 찐 집순이, 집돌이! 배달과 OTT만 있으면 한 달도 거뜬하게 버텨요. 집 안에서의 쾌적함과 인프라가 삶의 질 그 자체예요.",
     link: "https://gobang.kr/youth/notices/guide?tab=happy-house"
   },
   "효율 중독자": {
-    img: BASE + '2_hyoryul.png',
+    img: BASE + '02_hyoryul.png',
+    thumb: BASE + '2_hyoryul.png',
     name: "효율 중독자",
     sub: '"길바닥에 버리는 시간? 내 사전엔 없다."',
     desc: "이동 시간에 기 빨리는 걸 세상에서 제일 싫어해요. 역에서 집까지 1분 컷이어야 직성이 풀려요. 아낀 시간으로 운동도 하고, 공부도 하고, 침대에 더 누워 있는 효율 끝판왕이에요.",
     link: "https://gobang.kr/youth/notices/guide?tab=youth-safe-house"
   },
   "갓성비 장인": {
-    img: BASE + '3_gasungbi.png',
+    img: BASE + '03_gasungbi.png',
+    thumb: BASE + '3_gasungbi.png',
     name: "갓성비 장인",
     sub: '"아낄 땐 아끼고, 누릴 건 누린다!"',
     desc: "돈 새는 건 싫지만 삶의 퀄리티는 포기 못 해요. 목돈 부담은 줄이고, 감성 자취 라이프는 챙기고 싶은 야무진 현실파! 할인 쿠폰, 이벤트는 놓칠 수 없어요.",
     link: "https://gobang.kr/youth/notices/guide?tab=purchase-rental"
   },
   "인간 아지트": {
-    img: BASE + '4_social.png',
+    img: BASE + '04_social.png',
+    thumb: BASE + '4_social.png',
     name: "인간 아지트",
     sub: '"집에서도 사람 냄새 나야지!"',
     desc: "퇴근하고 불 꺼진 집에 혼자 들어가면 괜히 적적해져요. 집은 단순히 쉬는 공간이 아니라, 사람들과 취향도 나누고 소소한 이야기도 나누는 아지트 같은 곳이면 좋겠어요!",
     link: "https://gobang.kr/youth/notices/guide?tab=social"
   },
   "통장 다이어터": {
-    img: BASE + '5_jeokja.png',
+    img: BASE + '05_jeokja.png',
+    thumb: BASE + '5_jeokja.png',
     name: "통장 다이어터",
     sub: '"통장아.. 이번 달도 버텨보자!"',
     desc: "할인, 적립, 쿠폰은 일단 챙기고 보는 타입! 무지출 챌린지 영상에 괜히 눈길이 가고, 고정으로 빠져나가는 돈은 특히 아까워요. 소비는 신중하게, 만족감은 크게 챙기고 싶은 현실파예요.",
     link: "https://gobang.kr/youth/notices/guide?tab=jeonse-rental"
   },
   "멘탈 수호자": {
-    img: BASE + '6_mental.png',
+    img: BASE + '06_mental.png',
+    thumb: BASE + '6_mental.png',
     name: "멘탈 수호자",
     sub: '"마음의 평화가 제일 중요해!"',
     desc: "작은 스트레스도 은근 오래 남는 편이에요. 그래서 괜한 걱정거리나 불안 요소는 미리 치워두고 싶어요. 내 마음이 편한 게 결국 제일 큰 행복이라고 생각해요.",
     link: "https://gobang.kr/youth/notices/guide?tab=deundeun"
   },
   "동네 토박이": {
-    img: BASE + '7_jibak.png',
+    img: BASE + '07_jibak.png',
+    thumb: BASE + '7_jibak.png',
     name: "동네 토박이",
     sub: '"익숙한 게 최고야!"',
     desc: "새로운 환경에 적응하는 것보다 익숙한 곳에서 편하게 지내는 걸 좋아해요. 한 번 정 붙이면 오래 가는 타입이라 동네 맛집도 단골도 자연스럽게 늘어나요.",
     link: "https://gobang.kr/youth/notices/guide?tab=long-term-jeonse"
   },
   "플랜 B 보유자": {
-    img: BASE + '8_mirae.png',
+    img: BASE + '08_mirae.png',
+    thumb: BASE + '8_mirae.png',
     name: "플랜 B 보유자",
     sub: '"일단 계획부터 세워볼게?"',
     desc: "준비한 만큼 마음도 편해진다고 믿는 J 인간! 큰 그림을 그리는 걸 좋아해요. 하고 싶은 일도, 모아야 할 돈도, 이루고 싶은 목표도 미리 정리해 두는 타입이에요.",
@@ -328,7 +336,6 @@ function showResult(overrideKey) {
       </div>
       <div class="result-badge">내 자취 스타일</div>
       <img class="result-img" src="${r.img}" alt="${r.name}" />
-      <div class="result-name">${r.name}</div>
       <div class="result-sub">${r.sub}</div>
       <div class="result-desc">${r.desc}</div>
       <div class="result-buttons">
@@ -346,7 +353,7 @@ function showResult(overrideKey) {
         <div class="all-types-scroll">
           ${Object.entries(results).map(([key, val]) => `
             <button class="type-mini-card ${key === topKey ? 'is-mine' : ''}" onclick="openTypeModal('${key}')">
-              <img src="${val.img}" alt="${val.name}" />
+              <img src="${val.thumb}" alt="${val.name}" />
               <div class="type-mini-name">${val.name.replace(/ ([^ ]+)$/, '<br>$1')}</div>
             </button>
           `).join('')}
@@ -390,8 +397,7 @@ function openTypeModal(key) {
     <div class="type-modal-box">
       <button class="type-modal-close" id="modal-close">✕</button>
       <div class="result-badge">자취 스타일</div>
-      <img class="result-img" src="${r.img}" alt="${r.name}" />
-      <div class="result-name">${r.name}</div>
+      <img class="modal-img" src="${r.img}" alt="${r.name}" />
       <div class="result-sub">${r.sub}</div>
       <div class="result-desc">${r.desc}</div>
     </div>
