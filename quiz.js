@@ -423,33 +423,6 @@ function copyLink() {
   }
 }
 
-function shareKakao() {
-  if (!currentResult) return;
-  logCTA('카카오 공유');
-  const r = currentResult;
-  const urlKey = RESULT_KEY_MAP[r.name];
-  const shareUrl = 'https://dalnlia.github.io/test.youth.guide/?r=' + urlKey;
-  const ogImageUrl = 'https://dalnlia.github.io/test.youth.guide/images/og/og_' + urlKey + '.png';
-
-  if (!window.Kakao || !Kakao.isInitialized()) {
-    showToast('카카오 공유를 불러오는 중이에요. 잠시 후 다시 시도해주세요.');
-    return;
-  }
-
-  Kakao.Share.sendDefault({
-    objectType: 'feed',
-    content: {
-      title: r.name + ' — 내 자취 스타일 테스트',
-      description: r.sub + '\n나는 어떤 스타일일까? 테스트해봐!',
-      imageUrl: ogImageUrl,
-      link: { mobileWebUrl: shareUrl, webUrl: shareUrl }
-    },
-    buttons: [{
-      title: '나도 테스트하기',
-      link: { mobileWebUrl: shareUrl, webUrl: shareUrl }
-    }]
-  });
-}
 
 function saveImage() {
   if (!currentResult) return;
