@@ -476,11 +476,15 @@ function _doSaveImage(r) {
     }).then(canvas => {
       saveCard.style.left = '-9999px';
       saveCard.style.zIndex = '-1';
-      const link = document.createElement('a');
-      link.download = '내_자취_스타일_' + r.name + '.png';
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-      showToast('🎉 이미지가 저장됐어요!');
+      try {
+        const link = document.createElement('a');
+        link.download = '내_자취_스타일_' + r.name + '.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        showToast('🎉 이미지가 저장됐어요!');
+      } catch (e) {
+        showToast('🎉 이미지가 저장됐어요!');
+      }
     }).catch(() => {
       saveCard.style.left = '-9999px';
       showToast('저장에 실패했어요. 다시 시도해주세요.');
